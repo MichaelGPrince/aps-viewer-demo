@@ -16,6 +16,7 @@ body, html {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    background-color: lightgrey;
 }
 
 #preview, #overlay {
@@ -52,4 +53,12 @@ body, html {
 #models {
     flex: 0 1 auto;
     min-width: 2em;
+}
+
+#modelTools {
+    display: none;
+}
+
+#toolbar-propertiesTool, #toolbar-modelStructureTool, #toolbar-bimWalkTool {
+    display: none;
 }

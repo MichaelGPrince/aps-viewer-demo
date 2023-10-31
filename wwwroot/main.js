@@ -1,4 +1,4 @@
-import { initViewer, loadModel } from './viewer.js';
+import { initViewer, loadModel, loadView } from './viewer.js';
 
 initViewer(document.getElementById('preview')).then(viewer => {
     const urn = window.location.hash?.substring(1);
@@ -26,10 +26,19 @@ async function setupModelSelection(viewer, selectedUrn) {
     }
 }
 
+// async function setupViewSelection() {
+//     const dropdown = document.getElementById('views');
+//     try {
+
+//     }
+// }
+
 async function setupModelUpload(viewer) {
     const upload = document.getElementById('upload');
     const input = document.getElementById('input');
     const models = document.getElementById('models');
+    const isoButton = document.getElementById('3dIso');
+    const viewsDropdown2D = document.getElementById('2Dviews');
     upload.onclick = () => input.click();
     input.onchange = async () => {
         const file = input.files[0];
@@ -59,9 +68,27 @@ async function setupModelUpload(viewer) {
             input.value = '';
         }
     };
+    isoButton.onclick = () => {
+        const urn = window.location.hash?.substring(1);
+        const viewGuid = "a3c7b8de-313b-9902-bbb8-58f2ce4fc52f";
+        onModelSelected(viewer, urn, viewGuid);
+    };
+    viewsDropdown2D.onchange = () => {
+        console.log("GUID selected: ", viewsDropdown2D.value);
+        const urn = window.location.hash?.substring(1);
+        onModelSelected(viewer, urn, viewsDropdown2D.value);
+    }
+    // /* Un-comment if using multiple 3D Views (see also: index.html & viewer.js)*/
+    //
+    // const viewsDropdown3D = document.getElementById('3Dviews');
+    // viewsDropdown3D.onchange = () => {
+    //     console.log("GUID selected: ", viewsDropdown3D.value);
+    //     const urn = window.location.hash?.substring(1);
+    //     onModelSelected(viewer, urn, viewsDropdown3D.value);
+    // }
 }
 
-async function onModelSelected(viewer, urn) {
+async function onModelSelected(viewer, urn, viewGuid) {
     if (window.onModelSelectedTimeout) {
         clearTimeout(window.onModelSelectedTimeout);
         delete window.onModelSelectedTimeout;
@@ -86,7 +113,7 @@ async function onModelSelected(viewer, urn) {
                 break;
             default:
                 clearNotification();
-                loadModel(viewer, urn);
+                viewGuid ? loadView(viewer, urn, viewGuid) : loadModel(viewer, urn);
                 break; 
         }
     } catch (err) {

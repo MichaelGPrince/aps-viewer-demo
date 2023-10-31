@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/badge/npm-8.11-blue.svg)](https://www.npmjs.com/)
 [![license](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT)
 
-[Autodesk Platform Services](https://aps.autodesk.com) application built by following
+[Autodesk Platform Services](https://aps.autodesk.com) application built by following and extending
 the [Simple Viewer](https://tutorials.autodesk.io/tutorials/simple-viewer/) tutorial
 from https://tutorials.autodesk.io.
 
@@ -19,6 +19,9 @@ from https://tutorials.autodesk.io.
 - [Node.js](https://nodejs.org) (we recommend the Long Term Support version)
 - Terminal (for example, [Windows Command Prompt](https://en.wikipedia.org/wiki/Cmd.exe)
 or [macOS Terminal](https://support.apple.com/guide/terminal/welcome/mac))
+
+> [!IMPORTANT]
+> Highly recommended to use the [Autodesk Platform Services Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=petrbroz.vscode-forge-tools)  
 
 ### Setup & Run
 
@@ -36,7 +39,8 @@ folder, and run & debug the application directly from the editor.
 
 ## Troubleshooting
 
-Please contact us via https://forge.autodesk.com/en/support/get-help.
+** Check out the [APS Viewer API Reference](https://aps.autodesk.com/en/docs/viewer/v7/reference/Viewing/). **
+Please contact APS via https://forge.autodesk.com/en/support/get-help.
 
 ## License
 
