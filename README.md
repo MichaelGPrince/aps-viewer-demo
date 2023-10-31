@@ -39,7 +39,7 @@ folder, and run & debug the application directly from the editor.
 
 ## Troubleshooting
 
-** Check out the [APS Viewer API Reference](https://aps.autodesk.com/en/docs/viewer/v7/reference/Viewing/). **
+**Check out the [APS Viewer API Reference](https://aps.autodesk.com/en/docs/viewer/v7/reference/Viewing/).**
 Please contact APS via https://forge.autodesk.com/en/support/get-help.
 
 ## License
